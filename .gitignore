@@ -16,6 +16,8 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+*.py[cod]
+__pycache__/
 
 # Django stuff:
 *.log
