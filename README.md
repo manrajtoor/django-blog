@@ -1,44 +1,36 @@
 # django-blog
 A simple blog created with Django.
 
-Installation
-================
 
-Make virtualenv
-===============
+# Installation
 
-On Linux::
 
-   $ python -m venv env
-   $ source env/bin/activate
+### Make virtualenv
 
-On Windows::
+On Linux:
+
+   >  python -m venv env
+   >  source env/bin/activate
+
+On Windows:
 
    > python -m venv env
    > env/Scripts/activate
 
-::
+Install dependencies:
 
-   (env)$ pip install -r requirements.txt
+   > pip install -r requirements.txt
 
-migrate
-=======
+### Migrate
 
-::
 
-   (env)$ cd DjangoBlog/
-   (env)$ python manage.py migrate
 
-Make admin user
-===============
+   > cd DjangoBlog/
+   > python manage.py migrate
 
-::
+### Make admin user
 
-   (env)$ python manage.py createsuperuser
+   > python manage.py createsuperuser
 
-runserver
-=========
-
-::
-
-   (env)$ python manage.py runserver
+### Run server
+   > python manage.py runserver
