@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-from .models import Post
+from .models import Post, Comment
 from django.urls import reverse_lazy
 
 
@@ -26,3 +26,13 @@ class DeletePostView(DeleteView):
     model = Post
     template_name = "delete_post.html"
     success_url = reverse_lazy('index')
+
+class AddCommentView(CreateView):
+    model = Comment
+    template_name = "add_comment.html"
+    fields = ('name', 'body')
+    # fields = '__all__'
+
+    def form_valid(self, form):
+        form.instance.post_id = self.kwargs['pk']
+        return super().form_valid(form)

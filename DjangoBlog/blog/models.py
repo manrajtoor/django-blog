@@ -23,3 +23,7 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.post.title + ' | ' + self.name
+
+    def get_absolute_url(self):
+        print(self.post)
+        return reverse('post', args=(str(self.post.id)))
