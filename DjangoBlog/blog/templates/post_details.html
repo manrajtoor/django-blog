@@ -15,5 +15,18 @@
     
         <div class="post-body">{{ post.body|linebreaks }}</div>
         <a href="{% url 'index' %}"type="button" class="btn btn-dark mt-3">Back</a>
-    </div
->{% endblock %}
+    </div>
+    <h2>Comments</h2>
+
+    {% if post.comments.all %}
+        {% for comment in post.comments.all %}
+            <strong>{{ comment.name }} - {{ comment.date }}</strong>
+            <br/>
+            {{ comment.body }}
+            <br/>
+            <br/>
+        {% endfor %}
+    {% else %}
+        No comments ... <a href="{% url 'add_comment' post.pk %}"> Add a comment </a>
+    {% endif %}
+{% endblock %}
