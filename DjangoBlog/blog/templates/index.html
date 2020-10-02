@@ -2,16 +2,18 @@
 
 {% block content %}
 
-<h1>Posts</h1>
-
-
-<<ul>
+    <h1>Posts</h1>
+    
+    <br/>
+    
     {% for post in object_list %}
-    <a href="{% url 'post' post.pk %}"><li>{{ post.title }}</li></a>
-    <li>{{ post.author }}</li>
-    <li>{{ post.date }}</li>
-    <li>{{ post.body }}</li>
+        <a href="{% url 'post' post.pk %}">{{ post.title }}</a>
+        By {{ post.author }}
+        Posted at {{ post.date }}
+        <br/>
     {% endfor %}
-</ul>
+    
+    <br/>
+    <a href="{% url 'create_post' %}" class="btn btn-dark">Add a Post!</a>
 
 {% endblock %}

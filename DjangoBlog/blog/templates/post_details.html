@@ -1,11 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="post-detail">
-    <h1>{{ post.title }}</h1>
-
-    <small>By: {{post.author}}</small>
-    <br/>
-    <span class="text-center">{{ post.body }}</span>
-</div>
-{% endblock %}
+    <div class="post-detail">
+        <h1 class="my-0">{{ post.title }}</h1>
+    
+        <small>Author: {{post.author}}</small>
+        <br/>
+        <br/>
+    
+        <div class="post-body">{{ post.body|linebreaks }}</div>
+        <a href="{% url 'index' %}"type="button" class="btn btn-dark mt-3">Back</a>
+    </div
+>{% endblock %}
