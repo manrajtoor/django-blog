@@ -10,9 +10,11 @@
         <a href="{% url 'post' post.pk %}">{{ post.title }}</a>
         By {{ post.author }}
         Posted at {{ post.date }}
+        <small> - <a href="{% url 'update_post' post.pk %}">Edit</a></small>
+        <small>(<a href="{% url 'delete_post' post.pk %}">Delete</a>)</small>
         <br/>
     {% endfor %}
-    
+
     <br/>
     <a href="{% url 'create_post' %}" class="btn btn-dark">Add a Post!</a>
 
