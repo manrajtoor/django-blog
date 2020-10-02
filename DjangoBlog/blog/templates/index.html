@@ -3,7 +3,7 @@
 
 <<ul>
     {% for post in object_list %}
-    <li>{{ post.title }}</li>
+    <a href="{% url 'post' post.pk %}"><li>{{ post.title }}</li></a>
     <li>{{ post.author }}</li>
     <li>{{ post.date }}</li>
     <li>{{ post.body }}</li>
